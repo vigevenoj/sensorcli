@@ -9,4 +9,19 @@ Quickstart
         * mvn install:install-file -Dfile=huelocalsdk.jar -DgroupId=com.philips -DartifactId=huelocalsdk -Dversion=1.11.2 -Dpackaging=jar
         * mvn install:install-file -Dfile=huesdkresources.jar -DgroupId=com.philips -DartifactId=huesdkresources -Dversion=1.11.2 -Dpackaging=jar
 1. Run `mvn clean install` to build the application
+1. Run the SimpleHueTester to get a username and bridge IP to add to your configuration properties
 1. Run the application using `mvn exec:java -Dexec.args=/path/to/configuration/app.properties`
+
+
+Configuration properties
+---
+ * app.broker.url
+ * app.client.username
+ * app.client.password
+ * app.client.client_id
+ * app.broker.topic
+ * com.ibm.ssl.protocol
+ * com.ibm.ssl.trustStore
+ * com.ibm.ssl.trustStorePassword
+ * hue.last_connected_ip
+ * hue.username
