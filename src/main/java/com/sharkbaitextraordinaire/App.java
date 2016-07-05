@@ -14,10 +14,8 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
-import com.philips.lighting.hue.sdk.PHHueSDK;
-
 /**
- * Hello world!
+ * Sensor data (temperature/humidity) into colored lighting
  *
  */
 public class App {
@@ -29,8 +27,16 @@ public class App {
     public static void main( String[] args ) {
     	loadProperties(args[0]);
     	setUpMqttClient(configProperties);
-    	PHHueSDK phHueSDK = PHHueSDK.getInstance();
+    	
+    	if(configProperties.getProperty("hue.last_connected_ip")==null 
+    			|| configProperties.getProperty("hue.username")==null ) {
+    		// We don't have an IP address or username to use to connect to the hue bridge,
+    		// so set that up
+    	} else {
+    		// We should connect to the hue bridge
+    	}
     }
+    
     
     private static void loadDefaultProperties() {
     	String DEFAULT_PROPERTIES_FILE_NAME = "com/sharkbaitextraordinaire/sensorcli/default.properties";
